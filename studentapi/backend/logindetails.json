@@ -1,0 +1,18 @@
+{
+  
+  "RaviKumarRaj": {
+    "password": "12345678",
+    "email": "Ravi@vitfaculty.ac.in",
+    "isFaculty": true
+  },
+  "RamPrasad": {
+    "password": "12345678",
+    "email": "RamPRasad@vitfaculty.ac.in",
+    "isFaculty": true
+  },
+  "RaviKumar": {
+    "password": "12345678",
+    "email": "Ravi@vitstudent.ac.in",
+    "isFaculty": false
+  }
+}
