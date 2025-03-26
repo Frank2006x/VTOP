@@ -206,5 +206,26 @@
     "status": "failed (user not found)",
     "userType": "student",
     "timestamp": "2025-03-26T16:57:06.635Z"
+  },
+  {
+    "username": "wejrhow",
+    "action": "login",
+    "status": "failed (user not found)",
+    "userType": "student",
+    "timestamp": "2025-03-26T17:19:48.513Z"
+  },
+  {
+    "username": "RaviKumarRaj",
+    "action": "login",
+    "status": "failed (wrong user type)",
+    "userType": "student",
+    "timestamp": "2025-03-26T17:20:23.248Z"
+  },
+  {
+    "username": "RaviKumar",
+    "action": "login",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-26T17:20:44.326Z"
   }
 ]
