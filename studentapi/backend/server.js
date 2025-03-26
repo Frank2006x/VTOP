@@ -291,7 +291,7 @@ const getLastActivityByType = (userType) => {
 };
 
 // POST endpoint for last student activity
-app.post("/api/last-student-activity", (req, res) => {
+app.get("/api/last-student-activity", (req, res) => {
   try {
     const lastActivity = getLastActivityByType("student");
     
@@ -353,6 +353,78 @@ app.post("/api/last-faculty-activity", (req, res) => {
     res.status(500).json({ 
       success: false,
       message: "Failed to get last faculty activity",
+      error: error.message 
+    });
+  }
+});
+const profileFilePath = path.join(__dirname, "profiledetails.json");
+
+// Load profile data
+let profileDetails = {};
+if (fs.existsSync(profileFilePath)) {
+  profileDetails = JSON.parse(fs.readFileSync(profileFilePath, "utf8"));
+}
+
+// GET endpoint for profile details
+app.get("/api/profile/:username", (req, res) => {
+  try {
+    const { username } = req.params;
+
+    if (!profileDetails[username]) {
+      return res.status(404).json({ 
+        success: false,
+        message: "Profile not found",
+        data: null
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Profile retrieved successfully",
+      data: profileDetails[username]
+    });
+
+  } catch (error) {
+    console.error("Error getting profile:", error);
+    res.status(500).json({ 
+      success: false,
+      message: "Failed to get profile",
+      error: error.message 
+    });
+  }
+});
+const statsFilePath = path.join(__dirname, "stats.json");
+
+// Load stats data
+let statsDetails = {};
+if (fs.existsSync(statsFilePath)) {
+  statsDetails = JSON.parse(fs.readFileSync(statsFilePath, "utf8"));
+}
+
+// GET endpoint for stats details
+app.get("/api/stats/:username", (req, res) => {
+  try {
+    const { username } = req.params;
+
+    if (!statsDetails[username]) {
+      return res.status(404).json({ 
+        success: false,
+        message: "Stats not found for this user",
+        data: null
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Stats retrieved successfully",
+      data: statsDetails[username]
+    });
+
+  } catch (error) {
+    console.error("Error getting stats:", error);
+    res.status(500).json({ 
+      success: false,
+      message: "Failed to get stats",
       error: error.message 
     });
   }
