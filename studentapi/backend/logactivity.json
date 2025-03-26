@@ -248,5 +248,12 @@
     "status": "success",
     "userType": "faculty",
     "timestamp": "2025-03-26T17:41:23.085Z"
+  },
+  {
+    "username": "RaviKumar",
+    "action": "login",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-26T22:54:16.081Z"
   }
 ]
