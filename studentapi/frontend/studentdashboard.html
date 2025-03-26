@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="studentdashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">Vit Chennai</div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="fas fa-home"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#profile-section" class="nav-link"> <!-- Updated href -->
+                        <i class="fas fa-user"></i>
+                        Profile
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#grades-section" class="nav-link"> <!-- Updated href -->
+                        <i class="fas fa-graduation-cap"></i>
+                        Grades
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#announcements-section" class="nav-link"> <!-- Updated href -->
+                        <i class="fas fa-bell"></i>
+                        Notification
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="divider"></div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-book"></i>
+                        Study Material
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-comment-alt"></i>
+                        Feedback
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header">
+                <h1 class="page-title">Dashboard</h1>
+                <div class="notification-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+            </div>
+            
+            <!-- Profile Section -->
+            <div id="profile-section" class="profile-section"> <!-- Added ID -->
+                <div class="profile-card">
+                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg" alt="Profile Picture" class="profile-pic">
+                    <h3 class="profile-name" id="profileName"></h3>
+                    <p class="profile-role" id="profileRole"></p>
+                </div>
+                
+                <div class="details-card">
+                    <h3 class="details-title">Details</h3>
+                    <div class="detail-item">
+                        <div class="detail-label">Student Reg No</div>
+                        <div  id="regNo" ></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label" >Email</div>
+                        <div id="studentEmail">alex.johnson@university.edu</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label" >Department</div>
+                        <div id="department">Computer Science</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label" >Semester</div>
+                        <div id="studentSemester">4th</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grades Section -->
+            <div id="grades-section" class="grades-section"> <!-- Added ID -->
+                <h3 class="section-title">Grades and Academic History</h3>
+                <div class="grades-history">
+                    <div class="grade-card">
+                        <div class="grade-title">CGPA</div>
+                        <div class="grade-value" id="cgpa">8.73</div>
+                    </div>
+                    <div class="grade-card">
+                        <div class="grade-title">Attendance</div>
+                        <div class="grade-value" id="attendance">86%</div>
+                    </div>
+                    <div class="grade-card">
+                        <div class="grade-title">TotalCredits</div>
+                        <div class="grade-value" id="totalCredits">81</div>
+                    </div>
+                    <div class="grade-card">
+                        <div class="grade-title">University Rank</div>
+                        <div class="grade-value" id="universityRank">19</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notification Section -->
+            <div id="announcements-section" class="Notification"> <!-- Added ID -->
+                <h3 class="section-title">Announcements</h3>
+                <div class="announcement-item">
+                    <i class="fas fa-calendar-alt announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">📢 Exam Timetable Released!</span>
+                        <p class="announcement-desc">The final exam schedule for all departments has been published. Check the Examination Portal for details.</p>
+                    </div>
+                </div>
+                
+                <div class="announcement-item">
+                    <i class="fas fa-briefcase announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">🎓 Placement Drive Alert!</span>
+                        <p class="announcement-desc">Infosys, TCS, and Wipro are visiting campus on April 10th. Register on the Career Services Portal before April 5th.</p>
+                    </div>
+                </div>
+                
+                <div class="announcement-item">
+                    <i class="fas fa-code announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">🚀 Hackathon Registration Open!</span>
+                        <p class="announcement-desc">Join the 48-hour coding challenge and win exciting prizes. Register before April 8th!</p>
+                    </div>
+                </div>
+                
+                <div class="announcement-item">
+                    <i class="fas fa-building announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">📄 Internship Opportunities</span>
+                        <p class="announcement-desc">Companies like Amazon and Google are offering summer internships. Visit the Internship Cell for more details.</p>
+                    </div>
+                </div>
+                
+                <div class="announcement-item">
+                    <i class="fas fa-book announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">📚 Library Timings Extended</span>
+                        <p class="announcement-desc">The library will remain open till 11 PM during the exam season.</p>
+                    </div>
+                </div>
+                
+                <div class="announcement-item">
+                    <i class="fas fa-running announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">🏆 Sports Meet 2025</span>
+                        <p class="announcement-desc">Register for football, basketball, and athletics before March 30th. Let's bring home the trophy!</p>
+                    </div>
+                </div>
+                
+                <div class="announcement-item">
+                    <i class="fas fa-home announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">🛑 Hostel Fee Payment Deadline</span>
+                        <p class="announcement-desc">Last date for hostel fee payment is March 31st. Late fees will be applicable after the due date.</p>
+                    </div>
+                </div>
+                
+                <div class="announcement-item">
+                    <i class="fas fa-laptop-code announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">🖥 New Web Development Course</span>
+                        <p class="announcement-desc">Learn React, Node.js, and MongoDB in a certified online program. Enroll today!</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Add this JavaScript to handle active state changes
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // Remove active class from all links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Special case for Dashboard link
+                    if(this.getAttribute('href') === '#') {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Update active link based on scroll position
+            window.addEventListener('scroll', function() {
+                const sections = {
+                    'profile-section': document.querySelector('a[href="#profile-section"]'),
+                    'grades-section': document.querySelector('a[href="#grades-section"]'),
+                    'announcements-section': document.querySelector('a[href="#announcements-section"]')
+                };
+                
+                const scrollPosition = window.scrollY + 100;
+                
+                for (const [sectionId, link] of Object.entries(sections)) {
+                    const section = document.getElementById(sectionId);
+                    if (section.offsetTop <= scrollPosition && 
+                        section.offsetTop + section.offsetHeight > scrollPosition) {
+                        navLinks.forEach(l => l.classList.remove('active'));
+                        link.classList.add('active');
+                    }
+                }
+                
+                // Handle top of page case
+                if (window.scrollY < 100) {
+                    document.querySelector('a[href="#"]').classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script>
+      async function fetchStudentData() {
+  try {
+    // 1. First fetch the last student activity to get the username
+    const activityResponse = await fetch('http://localhost:3000/api/last-student-activity');
+    
+    if (!activityResponse.ok) {
+      throw new Error(`HTTP error! status: ${activityResponse.status}`);
+    }
+    
+    const activityData = await activityResponse.json();
+    
+    if (!activityData.success) {
+      throw new Error(activityData.message);
+    }
+    
+    const username = activityData.data.username;
+    const profileName = document.getElementById('profileName');
+    profileName.textContent = username;
+    console.log('Last student username:', username);
+    
+    // 2. Fetch both profile and stats data in parallel
+    const [profile, stats] = await Promise.all([
+      fetchUserProfile(username),
+      fetchUserStats(username)
+    ]);
+    
+    // 3. Return as array of two objects
+    return [profile, stats];
+    
+  } catch (error) {
+    console.error('Error in fetchStudentData:', error);
+    throw error; // Re-throw to allow calling code to handle
+  }
+}
+
+async function fetchUserProfile(username) {
+  try {
+    const response = await fetch(`http://localhost:3000/api/profile/${username}`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+    
+    return data.data; // Return just the profile data
+    
+  } catch (error) {
+    console.error('Error fetching profile:', error);
+    throw error;
+  }
+}
+
+async function fetchUserStats(username) {
+  try {
+    const response = await fetch(`http://localhost:3000/api/stats/${username}`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+    
+    return data.data; // Return just the stats data
+    
+  } catch (error) {
+    console.error('Error fetching stats:', error);
+    throw error;
+  }
+}
+
+// Usage example:
+fetchStudentData()
+  .then(([profileData, statsData]) => {
+    
+    console.log('Profile data:', profileData);
+    console.log('Stats data:', statsData);
+   
+    const profileRole = document.getElementById('profileRole');
+    profileRole.textContent = profileData.department;
+    const regNo = document.getElementById('regNo');
+    regNo.innerHTML = profileData.studentId;
+    const studentEmail = document.getElementById('studentEmail');
+    studentEmail.innerHTML = profileData.emailAddress;
+    const department = document.getElementById('department');
+    department.innerHTML = profileData.department;
+    const studentSemester = document.getElementById('studentSemester');
+    studentSemester.innerHTML = profileData.semester;
+    const cgpa = document.getElementById('cgpa');
+    cgpa.innerHTML = statsData.CGPA;
+    const attendance = document.getElementById('attendance');
+    attendance.innerHTML = statsData.Attendance;
+    const totalCredits = document.getElementById('totalCredits');
+    totalCredits.innerHTML = statsData.totalcredits;
+    const universityRank = document.getElementById('universityRank');
+    universityRank.innerHTML = statsData.universityrank;
+    
+   
+   
+  })
+  .catch(error => {
+    console.error('Failed to fetch student data:', error);
+    // Handle error (show message to user, etc.)
+  });
+
+    </script>
+</body>
+</html>
