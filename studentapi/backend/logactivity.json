@@ -53,6 +53,7 @@
     "action": "login",
     "status": "failed (user not found)",
     "userType": "student",
+<<<<<<< HEAD
     "timestamp": "2025-03-26T19:05:52.576Z"
   },
   {
@@ -61,5 +62,50 @@
     "status": "success",
     "userType": "student",
     "timestamp": "2025-03-26T19:07:22.343Z"
+=======
+    "timestamp": "2025-03-26T16:57:06.635Z"
+  },
+  {
+    "username": "wejrhow",
+    "action": "login",
+    "status": "failed (user not found)",
+    "userType": "student",
+    "timestamp": "2025-03-26T17:19:48.513Z"
+  },
+  {
+    "username": "RaviKumarRaj",
+    "action": "login",
+    "status": "failed (wrong user type)",
+    "userType": "student",
+    "timestamp": "2025-03-26T17:20:23.248Z"
+  },
+  {
+    "username": "RaviKumar",
+    "action": "login",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-26T17:20:44.326Z"
+  },
+  {
+    "username": "Hari Bhai",
+    "action": "signup",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-26T17:25:29.751Z"
+  },
+  {
+    "username": "Hari Bhai",
+    "action": "login",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-26T17:25:41.129Z"
+  },
+  {
+    "username": "RaviKumarRaj",
+    "action": "login",
+    "status": "success",
+    "userType": "faculty",
+    "timestamp": "2025-03-26T17:41:23.085Z"
+>>>>>>> 521ddeff612e20fcb76855e648f711ab302807ec
   }
 ]
