@@ -1,5 +1,4 @@
 {
-  
   "RaviKumarRaj": {
     "password": "12345678",
     "email": "Ravi@vitfaculty.ac.in",
@@ -13,6 +12,11 @@
   "RaviKumar": {
     "password": "12345678",
     "email": "Ravi@vitstudent.ac.in",
+    "isFaculty": false
+  },
+  "Hari Bhai": {
+    "password": "12345678",
+    "email": "hari@vitstudent.ac.in",
     "isFaculty": false
   }
 }

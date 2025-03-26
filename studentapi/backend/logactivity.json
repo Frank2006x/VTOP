@@ -227,5 +227,26 @@
     "status": "success",
     "userType": "student",
     "timestamp": "2025-03-26T17:20:44.326Z"
+  },
+  {
+    "username": "Hari Bhai",
+    "action": "signup",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-26T17:25:29.751Z"
+  },
+  {
+    "username": "Hari Bhai",
+    "action": "login",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-26T17:25:41.129Z"
+  },
+  {
+    "username": "RaviKumarRaj",
+    "action": "login",
+    "status": "success",
+    "userType": "faculty",
+    "timestamp": "2025-03-26T17:41:23.085Z"
   }
 ]
