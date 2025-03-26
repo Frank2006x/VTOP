@@ -32,10 +32,11 @@
 
         #header {
             width: calc(100% - 2rem);
-            margin: 1rem;
+            margin: 0rem;
+            box-sizing: content-box;
             padding: 15px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 1rem;
+            /* border-radius: 1rem; */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -56,6 +57,7 @@
             align-items: center;
             flex-wrap: wrap;
             padding: 1rem 0;
+            margin-bottom: 1rem;
         }
 
         #student-icon, #teacher-icon {
@@ -63,7 +65,9 @@
             margin: 1rem;
             text-align: center;
         }
-        
+        #student-icon img{
+            transform: scale(1.2);
+        }
         #student-icon img, #teacher-icon img {
             width: 100%;
             max-width: 200px;
@@ -71,12 +75,14 @@
         }
 
         #student-icon:hover, #teacher-icon:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         #main {
             height: auto;
             padding: 1rem;
+            display: flex;
+            flex-direction: column;
         }
 
         #achievement {
@@ -93,6 +99,7 @@
             color: white;
             text-align: center;
             margin: 1rem auto;
+            margin-bottom: 2rem; /* Added bottom margin */
         }
         
         #achievement>h2 {
@@ -138,15 +145,24 @@
         
         @media (min-width: 992px) {
             #main {
-                height: 36rem;
+                height: auto; /* Changed from fixed height to auto */
+                padding-bottom: 2rem; /* Added padding at bottom */
             }
             
             #intro-icon {
-                height: 50%;
+                height: auto;
+                margin-bottom: 2rem;
             }
             
             #3d {
                 height: 80vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .row {
+                align-items: stretch; /* Make columns equal height */
             }
         }
         
@@ -196,11 +212,12 @@
                 </div>
             </div>
             <div class="col-12 col-lg-5" id="3d">
-                <model-viewer src="assets/mech_drone.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" shadow-intensity="1" autoplay>
+                <model-viewer src="assets/mech_drone.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" autoplay disable-zoom>
                     <div class="progress-bar hide" slot="progress-bar">
                         <div class="update-bar"></div>
                     </div>
                 </model-viewer>
+                
             </div>
         </div>
     </div>
