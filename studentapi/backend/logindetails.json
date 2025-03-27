@@ -18,5 +18,15 @@
     "password": "12345678",
     "email": "harish@vitstudent.ac.in",
     "isFaculty": false
+  },
+  "RajRameshbabu": {
+    "password": "12345678",
+    "email": "Raj@vitfaculty.ac.in",
+    "isFaculty": true
+  },
+  "RajaRamSingh": {
+    "password": "12345678",
+    "email": "raja@vitfaculty.ac.in",
+    "isFaculty": true
   }
 }
