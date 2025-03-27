@@ -53,7 +53,6 @@
     "action": "login",
     "status": "failed (user not found)",
     "userType": "student",
-<<<<<<< HEAD
     "timestamp": "2025-03-26T19:05:52.576Z"
   },
   {
@@ -62,60 +61,180 @@
     "status": "success",
     "userType": "student",
     "timestamp": "2025-03-26T19:07:22.343Z"
-=======
-    "timestamp": "2025-03-26T16:57:06.635Z"
   },
   {
-    "username": "wejrhow",
+    "username": "Frank_077",
     "action": "login",
-    "status": "failed (user not found)",
+    "status": "success",
     "userType": "student",
-    "timestamp": "2025-03-26T17:19:48.513Z"
-  },
-  {
-    "username": "RaviKumarRaj",
-    "action": "login",
-    "status": "failed (wrong user type)",
-    "userType": "student",
-    "timestamp": "2025-03-26T17:20:23.248Z"
+    "timestamp": "2025-03-26T19:26:18.013Z"
   },
   {
     "username": "RaviKumar",
     "action": "login",
     "status": "success",
     "userType": "student",
-    "timestamp": "2025-03-26T17:20:44.326Z"
+    "timestamp": "2025-03-26T19:29:51.614Z"
   },
   {
-    "username": "Hari Bhai",
+    "username": "RaviKumar",
+    "action": "login",
+    "status": "failed",
+    "userType": "student",
+    "timestamp": "2025-03-26T19:34:35.533Z"
+  },
+  {
+    "username": "RaviKumar",
+    "action": "login",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-26T20:45:12.810Z"
+  },
+  {
+    "username": "RaviKumar",
+    "action": "login",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-26T20:47:00.921Z"
+  },
+  {
+    "username": "RaviKumar",
+    "action": "login",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-26T23:00:13.891Z"
+  },
+  {
+    "username": "RaviKumar",
+    "action": "login",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-26T23:02:45.229Z"
+  },
+  {
+    "username": "RaviKumar",
+    "action": "login",
+    "status": "failed",
+    "userType": "student",
+    "timestamp": "2025-03-26T23:27:59.652Z"
+  },
+  {
+    "username": "RaviKumar",
+    "action": "login",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-26T23:28:06.133Z"
+  },
+  {
+    "username": "RaviKumar",
+    "action": "login",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-27T04:25:16.041Z"
+  },
+  {
+    "username": "RaviKumar",
+    "action": "login",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-27T04:25:25.008Z"
+  },
+  {
+    "username": "RaviKumar",
+    "action": "login",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-27T04:41:11.931Z"
+  },
+  {
+    "username": "Frank_077",
+    "action": "login",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-27T04:41:36.428Z"
+  },
+  {
+    "username": "SureshRaj",
     "action": "signup",
     "status": "success",
     "userType": "student",
-    "timestamp": "2025-03-26T17:25:29.751Z"
+    "timestamp": "2025-03-27T04:45:11.468Z"
   },
   {
-    "username": "Hari Bhai",
+    "username": "SureshRaj",
     "action": "login",
     "status": "success",
     "userType": "student",
-    "timestamp": "2025-03-26T17:25:41.129Z"
+    "timestamp": "2025-03-27T04:50:52.319Z"
   },
   {
-    "username": "RaviKumarRaj",
-    "action": "login",
+    "username": "HarishKumar",
+    "action": "signup",
     "status": "success",
-    "userType": "faculty",
-    "timestamp": "2025-03-26T17:41:23.085Z"
-<<<<<<< HEAD
+    "userType": "student",
+    "timestamp": "2025-03-27T04:54:13.894Z"
+  },
+  {
+    "username": "HarishKumar",
+    "action": "forgot-password",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-27T04:54:40.823Z"
+  },
+  {
+    "username": "HarishKumar",
+    "action": "forgot-password",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-27T04:54:54.420Z"
+  },
+  {
+    "username": "HarishKumar",
+    "action": "forgot-password",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-27T04:57:08.736Z"
+  },
+  {
+    "username": "HarishKumar",
+    "action": "forgot-password",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-27T04:59:23.527Z"
+  },
+  {
+    "username": "HarishKumar",
+    "action": "forgot-password",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-27T04:59:37.832Z"
+  },
+  {
+    "username": "HarishKumar",
+    "action": "forgot-password",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-27T05:01:15.565Z"
+  },
+  {
+    "username": "HarishKumar",
+    "action": "forgot-password",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-27T05:02:35.370Z"
+  },
+  {
+    "username": "HarishKumar",
+    "action": "forgot-password",
+    "status": "success",
+    "userType": "student",
+    "timestamp": "2025-03-27T05:03:28.591Z"
   },
   {
     "username": "RaviKumar",
     "action": "login",
     "status": "success",
     "userType": "student",
-    "timestamp": "2025-03-26T22:54:16.081Z"
-=======
->>>>>>> 521ddeff612e20fcb76855e648f711ab302807ec
->>>>>>> 43ce5d8cbfef55b7776c12416d082006c51274cd
+    "timestamp": "2025-03-27T05:03:41.581Z"
   }
 ]

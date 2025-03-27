@@ -310,37 +310,89 @@ document
   });
 
       // Forgot password form submission
-      document
-        .getElementById("forgotPasswordForm")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
+      // Forgot password form submission
+document.getElementById("forgotPasswordForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-          const username = document.getElementById("recoveryUsername").value;
-          const email = document.getElementById("recoveryEmail").value;
-          const passwordDisplay = document.getElementById("passwordDisplay");
+    const username = document.getElementById("recoveryUsername").value;
+    const email = document.getElementById("recoveryEmail").value;
+    const passwordDisplay = document.getElementById("passwordDisplay");
 
-          try {
-            const response = await fetch(`${API_BASE_URL}/forgot-password`, {
-              method: "POST",
-              headers: {
+    // Clear previous messages and hide any existing close button
+    passwordDisplay.innerHTML = "";
+    passwordDisplay.style.color = "";
+    passwordDisplay.style.padding = "";
+    passwordDisplay.style.marginTop = "";
+
+    try {
+        // Show loading state
+        passwordDisplay.textContent = "Processing your request...";
+        passwordDisplay.style.color = "#333";
+
+        const response = await fetch(`${API_BASE_URL}/forgot-password`, {
+            method: "POST",
+            headers: {
                 "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ username, email }),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-              passwordDisplay.textContent = data.message;
-            } else {
-              passwordDisplay.textContent = data.message;
-            }
-          } catch (error) {
-            console.error("Password recovery error:", error);
-            passwordDisplay.textContent =
-              "An error occurred while recovering password";
-          }
+            },
+            body: JSON.stringify({ username, email }),
         });
+
+        const data = await response.json();
+
+        // Clear loading state
+        passwordDisplay.innerHTML = "";
+
+        if (response.ok) {
+            // Show the retrieved password
+            const passwordText = document.createElement("div");
+            passwordText.textContent = `Your password is: ${data.password}`;
+            passwordText.style.color = "green";
+            passwordText.style.fontWeight = "bold";
+            passwordText.style.marginBottom = "10px";
+            
+            passwordDisplay.appendChild(passwordText);
+
+            // Add explanation text
+            const explanation = document.createElement("div");
+            explanation.textContent = "Please copy this password and keep it secure.";
+            explanation.style.color = "#666";
+            explanation.style.fontSize = "0.9em";
+            explanation.style.marginBottom = "15px";
+            passwordDisplay.appendChild(explanation);
+
+            // Add close button
+            const closeBtn = document.createElement("button");
+            closeBtn.textContent = "Close";
+            closeBtn.className = "btn";
+            closeBtn.style.marginTop = "10px";
+            closeBtn.onclick = () => {
+                forgotPasswordModal.style.display = "none";
+                document.getElementById("forgotPasswordForm").reset();
+                passwordDisplay.innerHTML = "";
+            };
+            passwordDisplay.appendChild(closeBtn);
+        } else {
+            // Show error message
+            const errorText = document.createElement("div");
+            errorText.textContent = data.message || "Error recovering password";
+            errorText.style.color = "red";
+            errorText.style.padding = "10px";
+            errorText.style.marginTop = "15px";
+            passwordDisplay.appendChild(errorText);
+        }
+    } catch (error) {
+        console.error("Password recovery error:", error);
+        passwordDisplay.innerHTML = "";
+        
+        const errorText = document.createElement("div");
+        errorText.textContent = "An error occurred while recovering password";
+        errorText.style.color = "red";
+        errorText.style.padding = "10px";
+        errorText.style.marginTop = "15px";
+        passwordDisplay.appendChild(errorText);
+    }
+});
+
     </script>
   </body>
 </html>

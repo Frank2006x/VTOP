@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+body {
+  background: #ffffff;
+  color: black;
+}
+
+.timeline {
+  margin: 0 auto;
+  max-width: 750px;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 3px 1fr;
+  font-family: "Fira Sans", sans-serif;
+  color: #000000;
+}
+
+.timeline__component {
+  margin: 0 20px 20px 20px;
+}
+
+.timeline__component--bg {
+  padding: 1.5em;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* LEAVE TILL LAST */
+.timeline__component--bottom {
+  margin-bottom: 0;
+}
+
+.timeline__middle {
+  position: relative;
+  background: #000000;
+}
+
+.timeline__point {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  background: #000000;
+  border-radius: 50%;
+}
+
+/* LEAVE TILL LAST */
+.timeline__point--bottom {
+  top: initial;
+  bottom: 0;
+}
+
+.timeline__date--right {
+  text-align: right;
+}
+
+.timeline__title {
+  margin: 0;
+  font-size: 1.15em;
+  font-weight: bold;
+}
+
+.timeline__paragraph {
+  line-height: 1.5;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="timeline">
+    <div class="timeline__component">
+      <div class="timeline__date timeline__date--right">Freshman Year</div>
+    </div>
+    <div class="timeline__middle">
+      <div class="timeline__point"></div>
+    </div>
+    <div class="timeline__component timeline__component--bg">
+      <h2 class="timeline__title">Set your sail ready for engineering</h2>
+      <p class="timeline__paragraph">
+        Dedicated your consciousness
+      </p>
+    </div>
+    <div class="timeline__component timeline__component--bg">
+      <h2 class="timeline__title">Lead into the college as a senior</h2>
+      <p class="timeline__paragraph">
+        Dedicating another year to upskilling
+      </p>
+  
+    </div>
+    <div class="timeline__middle">
+      <div class="timeline__point"></div>
+    </div>
+    <div class="timeline__component">
+      <div class="timeline__date">Sophomore Year</div>
+    </div>
+    <div class="timeline__component">
+      <div class="timeline__date timeline__date--right">Junior Year</div>
+    </div>
+    <div class="timeline__middle">
+      <div class="timeline__point"></div>
+    </div>
+    <div class="timeline__component timeline__component--bg">
+      <h2 class="timeline__title">3rd Year-begins🥶</h2>
+      <p class="timeline__paragraph">
+        life is becoming more serious
+      </p>
+    </div>
+    <div class="timeline__component timeline__component--bottom timeline__component--bg">
+      <h2 class="timeline__title">4 years of dedication</h2>
+      <p class="timeline__paragraph">
+        Time to face life alone
+      </p>
+  
+    </div>
+    <div class="timeline__middle">
+      <div class="timeline__point"></div>
+      <div class="timeline__point timeline__point--bottom"></div>
+    </div>
+    <div class="timeline__component timeline__component--bottom">
+      <div class="timeline__date">Senior Year</div>
+    </div>
+  </div>
+  
+</body>
+</html>

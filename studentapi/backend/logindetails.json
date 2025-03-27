@@ -1,36 +1,22 @@
 {
-<<<<<<< HEAD
-  
-
-=======
-  "RaviKumarRaj": {
-    "password": "12345678",
-    "email": "Ravi@vitfaculty.ac.in",
-    "isFaculty": true
-  },
-  "RamPrasad": {
-    "password": "12345678",
-    "email": "RamPRasad@vitfaculty.ac.in",
-    "isFaculty": true
-  },
->>>>>>> 521ddeff612e20fcb76855e648f711ab302807ec
   "RaviKumar": {
     "password": "12345678",
     "email": "Ravi@vitstudent.ac.in",
     "isFaculty": false
   },
-<<<<<<< HEAD
   "Frank_077": {
     "password": "12345678",
     "email": "FranK@vitstudent.ac.in",
-=======
-  "Hari Bhai": {
+    "isFaculty": false
+  },
+  "SureshRaj": {
+    "password": "suresh123",
+    "email": "Suresh@vitstudent.ac.in",
+    "isFaculty": false
+  },
+  "HarishKumar": {
     "password": "12345678",
-    "email": "hari@vitstudent.ac.in",
->>>>>>> 521ddeff612e20fcb76855e648f711ab302807ec
+    "email": "harish@vitstudent.ac.in",
     "isFaculty": false
   }
-
-
-  
 }
