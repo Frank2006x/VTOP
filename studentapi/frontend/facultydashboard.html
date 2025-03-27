@@ -1,0 +1,702 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+<link rel="stylesheet" href="facultydashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Teacher Dashboard</h3>
+                <p><span class="facultyName"></span> </p>
+            </div>
+            <div class="sidebar-menu">
+                <div class="menu-item active" data-target="students">
+                    <i class="fas fa-users"></i>
+                    <span>Students</span>
+                </div>
+                <div class="menu-item" data-target="attendance">
+                    <i class="fas fa-clipboard-check"></i>
+                    <span>Attendance</span>
+                </div>
+                <div class="menu-item" data-target="assignments">
+                    <i class="fas fa-tasks"></i>
+                    <span>Assignments</span>
+                </div>
+                <div class="menu-item" data-target="announcements">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Announcements</span>
+                </div>
+                <div class="menu-item" data-target="timetable">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Timetable</span>
+                </div>
+                <div class="menu-item" data-target="profile">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h2 id="page-title">Student List</h2>
+                <div class="user-info" id="user-dropdown-trigger">
+                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User">
+                    <span id="facultyName"></span>
+                    <div class="user-dropdown" id="user-dropdown">
+                        <div class="dropdown-item" data-target="profile">
+                            <i class="fas fa-user"></i>
+                            <span>Profile</span>
+                        </div>
+                        <div class="dropdown-item">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </div>
+                        <div class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Students Card -->
+            <div class="card active" id="students">
+                <div class="card-header">
+                    <h3>Student List</h3>
+                    <button class="action-btn edit-btn">Add Student</button>
+                </div>
+                <table class="student-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Class</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1001</td>
+                            <td>John Doe</td>
+                            <td>john@example.com</td>
+                            <td>A</td>
+                            <td>
+                                <button class="action-btn edit-btn">Edit</button>
+                                <button class="action-btn delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1002</td>
+                            <td>Jane Smith</td>
+                            <td>jane@example.com</td>
+                            <td>A</td>
+                            <td>
+                                <button class="action-btn edit-btn">Edit</button>
+                                <button class="action-btn delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1003</td>
+                            <td>Michael Johnson</td>
+                            <td>michael@example.com</td>
+                            <td>A</td>
+                            <td>
+                                <button class="action-btn edit-btn">Edit</button>
+                                <button class="action-btn delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1004</td>
+                            <td>Emily Davis</td>
+                            <td>emily@example.com</td>
+                            <td>A</td>
+                            <td>
+                                <button class="action-btn edit-btn">Edit</button>
+                                <button class="action-btn delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1005</td>
+                            <td>Robert Wilson</td>
+                            <td>robert@example.com</td>
+                            <td>A</td>
+                            <td>
+                                <button class="action-btn edit-btn">Edit</button>
+                                <button class="action-btn delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Attendance Card -->
+            <div class="card" id="attendance">
+                <div class="card-header">
+                    <h3>Attendance</h3>
+                    <div>
+                        <select id="attendance-date">
+                            <option>Today (May 15, 2023)</option>
+                            <option>May 14, 2023</option>
+                            <option>May 13, 2023</option>
+                        </select>
+                    </div>
+                </div>
+                <table class="attendance-table">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1001</td>
+                            <td>John Doe</td>
+                            <td>
+                                <div class="attendance-status present" title="Present"></div>
+                            </td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>1002</td>
+                            <td>Jane Smith</td>
+                            <td>
+                                <div class="attendance-status present" title="Present"></div>
+                            </td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>1003</td>
+                            <td>Michael Johnson</td>
+                            <td>
+                                <div class="attendance-status absent" title="Absent"></div>
+                            </td>
+                            <td>Sick</td>
+                        </tr>
+                        <tr>
+                            <td>1004</td>
+                            <td>Emily Davis</td>
+                            <td>
+                                <div class="attendance-status present" title="Present"></div>
+                            </td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>1005</td>
+                            <td>Robert Wilson</td>
+                            <td>
+                                <div class="attendance-status present" title="Present"></div>
+                            </td>
+                            <td>Late</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="text-align: right; margin-top: 15px;">
+                    <button class="send-btn">Save Attendance</button>
+                </div>
+            </div>
+
+            <!-- Assignments Card -->
+            <div class="card" id="assignments">
+                <div class="card-header">
+                    <h3>Assignments</h3>
+                    <button class="upload-btn">Upload Assignment</button>
+                </div>
+                <ul class="assignment-list">
+                    <li class="assignment-item">
+                        <div class="assignment-info">
+                            <h4>Math Homework - Chapter 5</h4>
+                            <p>Due: May 20, 2023 | Submitted: 15/25 students</p>
+                        </div>
+                        <div class="assignment-actions">
+                            <a href="#"><i class="fas fa-download"></i> Download</a>
+                            <a href="#"><i class="fas fa-eye"></i> View Submissions</a>
+                        </div>
+                    </li>
+                    <li class="assignment-item">
+                        <div class="assignment-info">
+                            <h4>Science Project - Solar System</h4>
+                            <p>Due: May 25, 2023 | Submitted: 5/25 students</p>
+                        </div>
+                        <div class="assignment-actions">
+                            <a href="#"><i class="fas fa-download"></i> Download</a>
+                            <a href="#"><i class="fas fa-eye"></i> View Submissions</a>
+                        </div>
+                    </li>
+                    <li class="assignment-item">
+                        <div class="assignment-info">
+                            <h4>History Essay - World War II</h4>
+                            <p>Due: May 18, 2023 | Submitted: 20/25 students</p>
+                        </div>
+                        <div class="assignment-actions">
+                            <a href="#"><i class="fas fa-download"></i> Download</a>
+                            <a href="#"><i class="fas fa-eye"></i> View Submissions</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Announcements Card -->
+            <div class="card" id="announcements">
+                <div class="card-header">
+                    <h3>Send Announcement</h3>
+                </div>
+                <form class="announcement-form">
+                    <textarea placeholder="Write your announcement here..."></textarea>
+                    <button type="submit" class="send-btn">Send to Students</button>
+                </form>
+                <div class="announcement-list">
+                    <div class="announcement-item">
+                        <h4>Field Trip Next Week</h4>
+                        <p>We'll be visiting the science museum next Wednesday. Please bring your permission slips by Monday.</p>
+                        <p class="announcement-date">Posted: May 14, 2023 at 3:45 PM</p>
+                    </div>
+                    <div class="announcement-item">
+                        <h4>Exam Schedule Change</h4>
+                        <p>The math exam has been rescheduled to Friday due to the teacher's conference.</p>
+                        <p class="announcement-date">Posted: May 12, 2023 at 10:15 AM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timetable Card -->
+            <div class="card" id="timetable">
+                <div class="card-header">
+                    <h3>Class Timetable</h3>
+                    <div>
+                        <select id="timetable-week">
+                            <option>Current Week</option>
+                            <option>Next Week</option>
+                        </select>
+                    </div>
+                </div>
+                <table class="timetable">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="period">8:00 - 9:00</td>
+                            <td>
+                                <div class="subject">Mathematics</div>
+                                <div>Room 201</div>
+                            </td>
+                            <td>
+                                <div class="subject">Science</div>
+                                <div>Lab 3</div>
+                            </td>
+                            <td>
+                                <div class="subject">Mathematics</div>
+                                <div>Room 201</div>
+                            </td>
+                            <td>
+                                <div class="subject">History</div>
+                                <div>Room 105</div>
+                            </td>
+                            <td>
+                                <div class="subject">Mathematics</div>
+                                <div>Room 201</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="period">9:00 - 10:00</td>
+                            <td>
+                                <div class="subject">English</div>
+                                <div>Room 102</div>
+                            </td>
+                            <td>
+                                <div class="subject">Mathematics</div>
+                                <div>Room 201</div>
+                            </td>
+                            <td>
+                                <div class="subject">English</div>
+                                <div>Room 102</div>
+                            </td>
+                            <td>
+                                <div class="subject">Science</div>
+                                <div>Lab 3</div>
+                            </td>
+                            <td>
+                                <div class="subject">Physical Education</div>
+                                <div>Gym</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="period">10:00 - 11:00</td>
+                            <td>
+                                <div class="subject">Science</div>
+                                <div>Lab 3</div>
+                            </td>
+                            <td>
+                                <div class="subject">English</div>
+                                <div>Room 102</div>
+                            </td>
+                            <td>
+                                <div class="subject">Art</div>
+                                <div>Room 205</div>
+                            </td>
+                            <td>
+                                <div class="subject">Mathematics</div>
+                                <div>Room 201</div>
+                            </td>
+                            <td>
+                                <div class="subject">Science</div>
+                                <div>Lab 3</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="period">11:00 - 12:00</td>
+                            <td colspan="5" style="background-color: #f8f9fa;">Lunch Break</td>
+                        </tr>
+                        <tr>
+                            <td class="period">12:00 - 1:00</td>
+                            <td>
+                                <div class="subject">History</div>
+                                <div>Room 105</div>
+                            </td>
+                            <td>
+                                <div class="subject">Music</div>
+                                <div>Room 107</div>
+                            </td>
+                            <td>
+                                <div class="subject">Science</div>
+                                <div>Lab 3</div>
+                            </td>
+                            <td>
+                                <div class="subject">English</div>
+                                <div>Room 102</div>
+                            </td>
+                            <td>
+                                <div class="subject">History</div>
+                                <div>Room 105</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Profile Card -->
+            <div class="card" id="profile">
+                <div class="card-header">
+                    <h3>My Profile</h3>
+                </div>
+                <div class="profile-container">
+                    <div class="profile-info">
+                        <div class="profile-image">
+                            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile Picture" id="profile-pic">
+                            <button class="upload-btn" id="upload-pic-btn">Change Photo</button>
+                        </div>
+                        <div class="profile-details">
+                            <div class="detail-row">
+                                <div class="detail-label">Full Name:</div>
+                                <div class="detail-value" id="profilename">Dr. John Smith</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Email:</div>
+                                <div class="detail-value" id="profileemail">john.smith@school.edu</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Phone:</div>
+                                <div class="detail-value">(555) 123-4567</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Department:</div>
+                                <div class="detail-value">Mathematics</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Position:</div>
+                                <div class="detail-value">Senior Teacher</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Joined:</div>
+                                <div class="detail-value">September 15, 2015</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-edit-form">
+                        <form id="profile-form">
+                            <div class="form-group">
+                                <label for="full-name">Full Name</label>
+                                <input type="text" id="full-name" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" value="(555) 123-4567">
+                            </div>
+                            <div class="form-group">
+                                <label for="department">Department</label>
+                                <select id="department">
+                                    <option>Mathematics</option>
+                                    <option>Science</option>
+                                    <option>English</option>
+                                    <option>History</option>
+                                    <option>Arts</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="position">Position</label>
+                                <select id="position">
+                                    <option>Senior Teacher</option>
+                                    <option>Teacher</option>
+                                    <option>Assistant Teacher</option>
+                                    <option>Department Head</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="bio">Bio/About</label>
+                                <textarea id="bio">I have been teaching mathematics for over 10 years, specializing in algebra and calculus. My goal is to make math accessible and enjoyable for all students.</textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="cancel-btn">Cancel</button>
+                                <button type="submit" class="save-btn">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navigation between sections
+            const menuItems = document.querySelectorAll('.menu-item');
+            const cards = document.querySelectorAll('.card');
+            const pageTitle = document.getElementById('page-title');
+
+            menuItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove active class from all menu items and cards
+                    menuItems.forEach(i => i.classList.remove('active'));
+                    cards.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked menu item
+                    this.classList.add('active');
+                    
+                    // Show corresponding card
+                    const target = this.getAttribute('data-target');
+                    document.getElementById(target).classList.add('active');
+                    
+                    // Update page title
+                    pageTitle.textContent = this.querySelector('span').textContent;
+                });
+            });
+
+            // User dropdown
+            const userDropdownTrigger = document.getElementById('user-dropdown-trigger');
+            const userDropdown = document.getElementById('user-dropdown');
+
+            userDropdownTrigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                userDropdown.classList.toggle('active');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function() {
+                userDropdown.classList.remove('active');
+            });
+
+            // Dropdown items navigation
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const target = this.getAttribute('data-target');
+                    if (target) {
+                        // Remove active class from all menu items and cards
+                        menuItems.forEach(i => i.classList.remove('active'));
+                        cards.forEach(c => c.classList.remove('active'));
+                        
+                        // Add active class to profile menu item
+                        document.querySelector(`.menu-item[data-target="${target}"]`).classList.add('active');
+                        
+                        // Show profile card
+                        document.getElementById(target).classList.add('active');
+                        
+                        // Update page title
+                        pageTitle.textContent = 'Profile';
+                        
+                        // Close dropdown
+                        userDropdown.classList.remove('active');
+                    }
+                });
+            });
+
+            // Attendance status toggle
+            const attendanceStatuses = document.querySelectorAll('.attendance-status');
+            attendanceStatuses.forEach(status => {
+                status.addEventListener('click', function() {
+                    if (this.classList.contains('present')) {
+                        this.classList.remove('present');
+                        this.classList.add('absent');
+                        this.setAttribute('title', 'Absent');
+                    } else {
+                        this.classList.remove('absent');
+                        this.classList.add('present');
+                        this.setAttribute('title', 'Present');
+                    }
+                });
+            });
+
+            // Announcement form submission
+            const announcementForm = document.querySelector('.announcement-form');
+            announcementForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const textarea = this.querySelector('textarea');
+                const message = textarea.value.trim();
+                
+                if (message) {
+                    // Create new announcement
+                    const now = new Date();
+                    const announcementList = document.querySelector('.announcement-list');
+                    const newAnnouncement = document.createElement('div');
+                    newAnnouncement.className = 'announcement-item';
+                    newAnnouncement.innerHTML = `
+                        <h4>New Announcement</h4>
+                        <p>${message}</p>
+                        <p class="announcement-date">Posted: ${now.toLocaleDateString()} at ${now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</p>
+                    `;
+                    
+                    // Add to the top of the list
+                    announcementList.insertBefore(newAnnouncement, announcementList.firstChild);
+                    
+                    // Clear the textarea
+                    textarea.value = '';
+                    
+                    // Show success message
+                    alert('Announcement sent successfully!');
+                }
+            });
+
+            // Assignment upload button
+            const uploadBtn = document.querySelector('.upload-btn');
+            uploadBtn.addEventListener('click', function() {
+                alert('Assignment upload dialog would open here');
+            });
+
+            // Profile picture upload
+            const uploadPicBtn = document.getElementById('upload-pic-btn');
+            uploadPicBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Profile picture upload dialog would open here');
+                // In a real implementation, this would open a file upload dialog
+                // and handle the file upload process to update the profile picture
+            });
+
+            // Profile form submission
+            const profileForm = document.getElementById('profile-form');
+            profileForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Profile changes saved successfully!');
+                // In a real implementation, this would send the form data to the server
+            });
+
+            // Student actions
+            const editButtons = document.querySelectorAll('.edit-btn:not(.card-header .edit-btn)');
+            const deleteButtons = document.querySelectorAll('.delete-btn');
+            
+            editButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    alert('Edit student dialog would open here');
+                });
+            });
+            
+            deleteButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (confirm('Are you sure you want to delete this student?')) {
+                        const row = this.closest('tr');
+                        row.style.opacity = '0';
+                        setTimeout(() => {
+                            row.remove();
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        async function getLastFacultyLogin() {
+  try {
+    const response = await fetch('http://localhost:3000/api/last-faculty-activity', {
+      method: 'POST', // Note: Your endpoint uses POST
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      // Include body if your endpoint requires it (even if empty)
+      body: JSON.stringify({}),
+      credentials: 'include' // If you need to send cookies
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    
+    if (data.success) {
+      console.log('Last faculty login:', data.data);
+      // Process the data
+      return data.data;
+    } else {
+      console.error('Failed to get last faculty login:', data.message);
+      return null;
+    }
+  } catch (error) {
+    console.error('Error fetching last faculty login:', error);
+    return null;
+  }
+}
+
+// Usage example:
+getLastFacultyLogin().then(lastLogin => {
+  if (lastLogin) {
+    // Do something with the data
+    console.log('Faculty username:', lastLogin.username);
+    document.querySelector('.facultyName').innerHTML = lastLogin.username;
+    document.querySelector('#facultyName').innerHTML = lastLogin.username;
+    document.querySelector('#profilename').innerHTML = lastLogin.username;
+    document.querySelector('#profileemail').innerHTML = lastLogin.email;
+  
+    
+    // Example: Display in HTML
+    document.getElementById('lastFacultyLogin').innerHTML = `
+      <p>Last Faculty Activity: ${lastLogin.username}</p>
+      <p>Action: ${lastLogin.action}</p>
+      <p>Status: ${lastLogin.status}</p>
+      <p>Time: ${new Date(lastLogin.timestamp).toLocaleString()}</p>
+    `;
+  } else {
+    console.log('No faculty login data available');
+  }
+});
+
+getLastFacultyLogin();
+
+
+
+
+
+    </script>
+</body>
+</html>

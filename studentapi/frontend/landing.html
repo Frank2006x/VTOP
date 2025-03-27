@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTOP | VIT Chennai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #ffcc00;
+            --accent-color: #e63946;
+            --light-bg: rgba(255, 255, 255, 0.15);
+            --dark-text: #333;
+            --light-text: #f8f9fa;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: var(--light-text);
+        }
+        
+        #main-container {
+            width: 100vw;
+            min-height: 100vh;
+            background: url('assets/startBg.jpg') no-repeat center center/cover;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 51, 102, 0.8);
+            overflow: hidden;
+            position: relative;
+        }
+
+        #header {
+            width: 100%;
+            padding: 15px 30px;
+            background: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+        
+        #header h3 {
+            margin: 0;
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-speed);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width var(--transition-speed);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        #intro-container {
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        #intro-container h1 {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        #intro-container p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+        
+        #user-selection {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .user-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            width: 280px;
+            text-align: center;
+            transition: all var(--transition-speed);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+        }
+        
+        .user-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .user-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
+            transition: transform var(--transition-speed);
+        }
+        
+        .user-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .user-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        .user-card p {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .btn-login {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all var(--transition-speed);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-login:hover {
+            background-color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+        }
+        
+        #features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 350px;
+            transition: all var(--transition-speed);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        
+        #Achievements {
+            width: calc(100% - 2rem);
+            max-width: 800px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            text-align: center;
+            margin: 2rem auto;
+            transition: all var(--transition-speed);
+        }
+        
+        #Achievements:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        #Achievements>h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        #Achievements>h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            bottom: -10px;
+            left: 25%;
+            background: var(--secondary-color);
+            border-radius: 3px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 10px;
+        }
+
+        ul li {
+            margin: 20px 0;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            position: relative;
+            padding-left: 30px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        #model-viewer-container {
+            height: 50vh;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            margin: 2rem auto;
+            max-width: 800px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        model-viewer {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            border-radius: 10px;
+        }
+        
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: var(--light-text);
+            font-size: 1.5rem;
+            transition: color var(--transition-speed);
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 1rem;
+        }
+        
+        @media (min-width: 992px) {
+            #main-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            #model-viewer-container {
+                height: 60vh;
+                width: 90%;
+            }
+            
+            .feature-card {
+                width: calc(33.333% - 2rem);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            #user-selection {
+                gap: 1.5rem;
+            }
+            
+            .user-card {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            #model-viewer-container {
+                height: 40vh;
+            }
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <header id="header">
+            <div class="logo-container">
+                <!-- Add your logo image here -->
+                <!-- <img src="assets/vit-logo.png" alt="VIT Logo" class="logo-img"> -->
+                <h3>VIT Chennai - VTOP Portal</h3>
+            </div>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#features">Features</a>
+                <a href="#Achievements">Achievements</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <section id="intro-container" class="fade-in">
+                <h1>Welcome to VTOP Portal</h1>
+                <p>Your gateway to academic resources, course management, and institutional services at VIT Chennai</p>
+                
+                <div id="user-selection">
+                    <a href="login.html" class="user-card fade-in delay-1">
+                        <img src="assets/student.png" alt="Student Icon">
+                        <h3>Student Login</h3>
+                        <p>Access your academic records, timetable, and course materials</p>
+                        <span class="btn-login">Login as Student</span>
+                    </a>
+                    
+                    <a href="login.html" class="user-card fade-in delay-2">
+                        <img src="assets/teacher.png" alt="Faculty Icon">
+                        <h3>Faculty Login</h3>
+                        <p>Manage courses, upload materials, and track student progress</p>
+                        <span class="btn-login">Login as Faculty</span>
+                    </a>
+                </div>
+            </section>
+
+            <section id="features" class="fade-in delay-3">
+                <div class="feature-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Course Management</h3>
+                    <p>Easily access all your course materials, assignments, and resources in one centralized platform.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Timetable</h3>
+                    <p>View and manage your class schedule with real-time updates and notifications.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Performance Tracking</h3>
+                    <p>Monitor your academic progress with detailed analytics and grade reports.</p>
+                </div>
+            </section>
+
+            <section id="Achievements" class="fade-in">
+                <h2>Achievements</h2>
+                <ul>
+                    <li>The 9th best University, the 10th best research institution, and the 12th best engineering institution in India (NIRF Ranking, Govt. of India 2022).</li>
+                    <li>Ranked among the top 601-700 Universities in the world and one of the top 2-3 Institutions in India (Shanghai ARWU Ranking 2022).</li>
+                    <li>The first institute in India to receive QS 4-Star rating in the overall category.</li>
+                    <li>Recognized as an Institution of Eminence by the Government of India.</li>
+                    <li>Over 200+ patents filed and numerous research publications in reputed journals.</li>
+                </ul>
+            </section>
+
+            <div id="model-viewer-container" class="fade-in">
+                <model-viewer src="assets/buster_drone.glb" ar ar-modes="webxr scene-viewer quick-look"  tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" autoplay camera-orbit="292.4deg 109.2deg 9.924m" field-of-view="30deg" auto-rotate disable-zoom style="transform: scale(1.4);"> </model-viewer>
+
+            </div>
+        </main>
+
+        <footer id="contact" class="fade-in">
+            <h3>VIT Chennai</h3>
+            <p>Vellore Institute of Technology, Chennai Campus</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            
+        </footer>
+    </div>
+    
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple animation trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

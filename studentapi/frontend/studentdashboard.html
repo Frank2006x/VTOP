@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="studentdashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">Vit Chennai</div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="fas fa-home"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#profile-section" class="nav-link"> <!-- Updated href -->
+                        <i class="fas fa-user"></i>
+                        Profile
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#grades-section" class="nav-link"> <!-- Updated href -->
+                        <i class="fas fa-graduation-cap"></i>
+                        Grades
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#announcements-section" class="nav-link"> <!-- Updated href -->
+                        <i class="fas fa-bell"></i>
+                        Notification
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#timetable-section" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        Timetable
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#courses-section" class="nav-link">
+                        <i class="fas fa-book-open"></i>
+                        Courses
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#finance-section" class="nav-link">
+                        <i class="fas fa-money-bill-wave"></i>
+                        Finance & Fees
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#ai-chatbot-section" class="nav-link">
+                        <i class="fas fa-robot"></i>
+                        Dashboard Assistant
+                    </a>
+                </li>
+            </ul>
+            
+            
+            <div class="divider"></div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="studymaterial.html" class="nav-link">
+                        <i class="fas fa-book"></i>
+                        Study Material
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="feedback.html" class="nav-link">
+                        <i class="fas fa-comment-alt"></i>
+                        Feedback
+                    </a>
+                </li>
+                
+            </ul>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header">
+                <h1 class="page-title">Dashboard</h1>
+                <div class="notification-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+            </div>
+            
+            <!-- Profile Section -->
+            <div id="profile-section" class="profile-section"> <!-- Added ID -->
+                <div class="profile-card">
+                    <img src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg" alt="Profile Picture" class="profile-pic">
+                    <h3 class="profile-name" id="profileName"></h3>
+                    <p class="profile-role" id="profileRole"></p>
+                </div>
+                
+                <div class="details-card">
+                    <h3 class="details-title">Details</h3>
+                    <div class="detail-item">
+                        <div class="detail-label">Student Reg No</div>
+                        <div  id="regNo" ></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label" >Email</div>
+                        <div id="studentEmail">alex.johnson@university.edu</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label" >Department</div>
+                        <div id="department">Computer Science</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label" >Semester</div>
+                        <div id="studentSemester">4th</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grades Section -->
+            <div id="grades-section" class="grades-section"> <!-- Added ID -->
+                <h3 class="section-title">Grades and Academic History</h3>
+                <div class="grades-history">
+                    <div class="grade-card">
+                        <div class="grade-title">CGPA</div>
+                        <div class="grade-value" id="cgpa">8.73</div>
+                    </div>
+                    <div class="grade-card">
+                        <div class="grade-title">Attendance</div>
+                        <div class="grade-value" id="attendance">86%</div>
+                    </div>
+                    <div class="grade-card">
+                        <div class="grade-title">TotalCredits</div>
+                        <div class="grade-value" id="totalCredits">81</div>
+                    </div>
+                    <div class="grade-card">
+                        <div class="grade-title">University Rank</div>
+                        <div class="grade-value" id="universityRank">19</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notification Section -->
+            <div id="announcements-section" class="Notification"> <!-- Added ID -->
+                <h3 class="section-title">Announcements</h3>
+                <div class="announcement-item">
+                    <i class="fas fa-calendar-alt announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">📢 Exam Timetable Released!</span>
+                        <p class="announcement-desc">The final exam schedule for all departments has been published. Check the Examination Portal for details.</p>
+                    </div>
+                </div>
+                
+                <div class="announcement-item">
+                    <i class="fas fa-briefcase announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">🎓 Placement Drive Alert!</span>
+                        <p class="announcement-desc">Infosys, TCS, and Wipro are visiting campus on April 10th. Register on the Career Services Portal before April 5th.</p>
+                    </div>
+                </div>
+                
+                <div class="announcement-item">
+                    <i class="fas fa-code announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">🚀 Hackathon Registration Open!</span>
+                        <p class="announcement-desc">Join the 48-hour coding challenge and win exciting prizes. Register before April 8th!</p>
+                    </div>
+                </div>
+                
+                <div class="announcement-item">
+                    <i class="fas fa-building announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">📄 Internship Opportunities</span>
+                        <p class="announcement-desc">Companies like Amazon and Google are offering summer internships. Visit the Internship Cell for more details.</p>
+                    </div>
+                </div>
+                
+                <div class="announcement-item">
+                    <i class="fas fa-book announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">📚 Library Timings Extended</span>
+                        <p class="announcement-desc">The library will remain open till 11 PM during the exam season.</p>
+                    </div>
+                </div>
+                
+                <div class="announcement-item">
+                    <i class="fas fa-running announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">🏆 Sports Meet 2025</span>
+                        <p class="announcement-desc">Register for football, basketball, and athletics before March 30th. Let's bring home the trophy!</p>
+                    </div>
+                </div>
+                
+                <div class="announcement-item">
+                    <i class="fas fa-home announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">🛑 Hostel Fee Payment Deadline</span>
+                        <p class="announcement-desc">Last date for hostel fee payment is March 31st. Late fees will be applicable after the due date.</p>
+                    </div>
+                </div>
+                
+                <div class="announcement-item">
+                    <i class="fas fa-laptop-code announcement-icon"></i>
+                    <div class="announcement-content">
+                        <span class="announcement-title">🖥 New Web Development Course</span>
+                        <p class="announcement-desc">Learn React, Node.js, and MongoDB in a certified online program. Enroll today!</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <!-- Add this below your announcements-section div -->
+<div id="timetable-section" class="timetable-section">
+    <h3 class="section-title">Weekly Timetable</h3>
+    <div class="timetable-container">
+        <div class="timetable-header">
+            <div class="timetable-cell">Time</div>
+            <div class="timetable-cell">Monday</div>
+            <div class="timetable-cell">Tuesday</div>
+            <div class="timetable-cell">Wednesday</div>
+            <div class="timetable-cell">Thursday</div>
+            <div class="timetable-cell">Friday</div>
+        </div>
+        
+        <!-- Morning Session -->
+        <div class="timetable-row">
+            <div class="timetable-time">9:00 - 10:30</div>
+            <div class="timetable-subject" data-subject="dsa">
+                <span class="subject-name">Data Structures</span>
+                <span class="subject-details">Room A12 | Prof. Sharma</span>
+            </div>
+            <div class="timetable-subject" data-subject="maths">
+                <span class="subject-name">Discrete Maths</span>
+                <span class="subject-details">Room B05 | Prof. Gupta</span>
+            </div>
+            <div class="timetable-subject" data-subject="dsa">
+                <span class="subject-name">Data Structures</span>
+                <span class="subject-details">Room A12 | Prof. Sharma</span>
+            </div>
+            <div class="timetable-subject" data-subject="os">
+                <span class="subject-name">Operating Systems</span>
+                <span class="subject-details">Room C21 | Prof. Patel</span>
+            </div>
+            <div class="timetable-subject" data-subject="maths">
+                <span class="subject-name">Discrete Maths</span>
+                <span class="subject-details">Room B05 | Prof. Gupta</span>
+            </div>
+        </div>
+        
+        <!-- Break -->
+        <div class="timetable-row break">
+            <div class="timetable-time">10:30 - 11:00</div>
+            <div class="timetable-break" colspan="5">Break</div>
+        </div>
+        
+        <!-- Late Morning Session -->
+        <div class="timetable-row">
+            <div class="timetable-time">11:00 - 12:30</div>
+            <div class="timetable-subject" data-subject="dbms">
+                <span class="subject-name">DBMS</span>
+                <span class="subject-details">Lab 3 | Prof. Kumar</span>
+            </div>
+            <div class="timetable-subject" data-subject="os">
+                <span class="subject-name">Operating Systems</span>
+                <span class="subject-details">Room C21 | Prof. Patel</span>
+            </div>
+            <div class="timetable-subject" data-subject="dbms">
+                <span class="subject-name">DBMS</span>
+                <span class="subject-details">Lab 3 | Prof. Kumar</span>
+            </div>
+            <div class="timetable-subject" data-subject="algo">
+                <span class="subject-name">Algorithms</span>
+                <span class="subject-details">Room A15 | Prof. Reddy</span>
+            </div>
+            <div class="timetable-subject" data-subject="algo">
+                <span class="subject-name">Algorithms</span>
+                <span class="subject-details">Room A15 | Prof. Reddy</span>
+            </div>
+        </div>
+        
+        <!-- Lunch -->
+        <div class="timetable-row break">
+            <div class="timetable-time">12:30 - 1:30</div>
+            <div class="timetable-break" colspan="5">Lunch</div>
+        </div>
+        
+        <!-- Afternoon Session -->
+        <div class="timetable-row">
+            <div class="timetable-time">1:30 - 3:00</div>
+            <div class="timetable-subject" data-subject="se">
+                <span class="subject-name">Software Eng.</span>
+                <span class="subject-details">Room D08 | Prof. Joshi</span>
+            </div>
+            <div class="timetable-subject" data-subject="cn">
+                <span class="subject-name">Computer Networks</span>
+                <span class="subject-details">Lab 2 | Prof. Iyer</span>
+            </div>
+            <div class="timetable-subject" data-subject="se">
+                <span class="subject-name">Software Eng.</span>
+                <span class="subject-details">Room D08 | Prof. Joshi</span>
+            </div>
+            <div class="timetable-subject" data-subject="cn">
+                <span class="subject-name">Computer Networks</span>
+                <span class="subject-details">Lab 2 | Prof. Iyer</span>
+            </div>
+            <div class="timetable-subject" data-subject="elective">
+                <span class="subject-name">Elective</span>
+                <span class="subject-details">Room E11 | Prof. Malhotra</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="courses-section" class="courses-section">
+    <div class="courses-header">
+        <h3 class="section-title">My Courses</h3>
+        <button id="addCourseBtn" class="add-course-btn">
+            <i class="fas fa-plus"></i> Add Course
+        </button>
+    </div>
+    
+    <div class="courses-grid" id="coursesGrid">
+        <!-- Default courses will be added here by JavaScript -->
+    </div>
+    
+    <div id="addCourseForm" class="add-course-form">
+        <h4>Add New Course</h4>
+        <div class="form-group">
+            <label for="courseCode">Course Code</label>
+            <input type="text" id="courseCode" placeholder="e.g., CS101">
+        </div>
+        <div class="form-group">
+            <label for="courseName">Course Name</label>
+            <input type="text" id="courseName" placeholder="e.g., Introduction to Computer Science">
+        </div>
+        <div class="form-group">
+            <label for="courseCredits">Credits</label>
+            <input type="number" id="courseCredits" placeholder="e.g., 3" min="1" max="5">
+        </div>
+        <div class="form-group">
+            <label for="courseInstructor">Instructor</label>
+            <input type="text" id="courseInstructor" placeholder="e.g., Dr. Smith">
+        </div>
+        <div class="form-actions">
+            <button id="cancelAddCourse" class="cancel-btn">Cancel</button>
+            <button id="submitCourse" class="submit-btn">Add Course</button>
+        </div>
+    </div>
+</div>
+<!-- Add this inside your <main class="main-content"> section -->
+    <div id="finance-section" class="finance-section">
+        <h3 class="section-title">Finance & Fees Tracking</h3>
+        
+        <div class="finance-summary">
+            <div class="summary-card">
+                <div class="summary-title">Total Fees Due</div>
+                <div class="summary-value">₹42,500</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-title">Paid Amount</div>
+                <div class="summary-value paid">₹25,000</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-title">Balance</div>
+                <div class="summary-value balance">₹17,500</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-title">Due Date</div>
+                <div class="summary-value">15 Dec 2023</div>
+            </div>
+        </div>
+        
+        <div   class="finance-details">
+            <div class="payment-history">
+                <h4>Payment History</h4>
+                <div class="history-table">
+                    <div class="table-header">
+                        <div>Date</div>
+                        <div>Description</div>
+                        <div>Amount</div>
+                        <div>Status</div>
+                    </div>
+                    <div class="table-row">
+                        <div data-label="Date">10 Nov 2023</div>
+                        <div data-label="Description">Tuition Fee</div>
+                        <div data-label="Amount">₹15,000</div>
+                        <div data-label="Status" class="status paid-status">Paid</div>
+                    </div>
+                    <div class="table-row">
+                        <div data-label="Date">05 Oct 2023</div>
+                        <div data-label="Description">Hostel Fee</div>
+                        <div data-label="Amount">₹10,000</div>
+                        <div data-label="Status" class="status paid-status">Paid</div>
+                    </div>
+                    <div class="table-row">
+                        <div data-label="Date">15 Dec 2023</div>
+                        <div data-label="Description">Semester Fee</div>
+                        <div data-label="Amount">₹17,500</div>
+                        <div data-label="Status" class="status pending-status">Pending</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="fee-breakdown">
+                <h4>Fee Breakdown</h4>
+                <div class="breakdown-chart">
+                    <div class="chart-item">
+                        <div class="chart-label">Tuition Fee</div>
+                        <div class="chart-bar-container">
+                            <div class="chart-bar" style="width: 60%"></div>
+                        </div>
+                        <div class="chart-value">₹25,500</div>
+                    </div>
+                    <div class="chart-item">
+                        <div class="chart-label">Hostel Fee</div>
+                        <div class="chart-bar-container">
+                            <div class="chart-bar" style="width: 30%"></div>
+                        </div>
+                        <div class="chart-value">₹12,000</div>
+                    </div>
+                    <div class="chart-item">
+                        <div class="chart-label">Library Fee</div>
+                        <div class="chart-bar-container">
+                            <div class="chart-bar" style="width: 5%"></div>
+                        </div>
+                        <div class="chart-value">₹2,500</div>
+                    </div>
+                    <div class="chart-item">
+                        <div class="chart-label">Other Charges</div>
+                        <div class="chart-bar-container">
+                            <div class="chart-bar" style="width: 5%"></div>
+                        </div>
+                        <div class="chart-value">₹2,500</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="payment-actions">
+            <button class="payment-btn">
+                <i class="fas fa-rupee-sign"></i> Make Payment
+            </button>
+            <button class="receipt-btn">
+                <i class="fas fa-file-invoice"></i> Download Receipt
+            </button>
+        </div>
+    </div>
+    <!-- Add this inside your <main class="main-content"> -->
+<div id="ai-chatbot-section" class="ai-chatbot-section">
+    <div class="chatbot-header">
+        <h3><i class="fas fa-robot"></i> Dashboard Assistant</h3>
+        <button class="minimize-btn"><i class="fas fa-minus"></i></button>
+    </div>
+    
+    <div class="chatbot-messages">
+        <div class="message bot-message">
+            <div class="message-content">
+                <p>Hello! I'm your VIT Chennai dashboard assistant. I can help explain:</p>
+                <ul>
+                    <li><button class="feature-btn" data-feature="finance">💰 Finance & Fees</button></li>
+                    <li><button class="feature-btn" data-feature="courses">📚 Courses</button></li>
+                    <li><button class="feature-btn" data-feature="grades">📊 Grades</button></li>
+                    <li><button class="feature-btn" data-feature="timetable">⏰ Timetable</button></li>
+                </ul>
+                <p>What would you like to know about?</p>
+            </div>
+            <div class="message-time">Just now</div>
+        </div>
+    </div>
+    
+    <div class="chatbot-input">
+        <input type="text" placeholder="Ask me about the dashboard..." class="chat-input">
+        <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+<div class="timelinesection">
+ <center><h1>Your journey</h1></center>  
+<div class="timeline">
+    
+    <div class="timeline__component">
+      <div class="timeline__date timeline__date--right">Freshman Year</div>
+    </div>
+    <div class="timeline__middle">
+      <div class="timeline__point"></div>
+    </div>
+    <div class="timeline__component timeline__component--bg">
+      <h2 class="timeline__title">Set your sail ready for engineering</h2>
+      <p class="timeline__paragraph">
+        Dedicated your consciousness
+      </p>
+    </div>
+    <div class="timeline__component timeline__component--bg">
+      <h2 class="timeline__title">Lead into the college as a senior</h2>
+      <p class="timeline__paragraph">
+        Dedicating another year to upskilling
+      </p>
+  
+    </div>
+    <div class="timeline__middle">
+      <div class="timeline__point"></div>
+    </div>
+    <div class="timeline__component">
+      <div class="timeline__date">Sophomore Year</div>
+    </div>
+    <div class="timeline__component">
+      <div class="timeline__date timeline__date--right">Junior Year</div>
+    </div>
+    <div class="timeline__middle">
+      <div class="timeline__point"></div>
+    </div>
+    <div class="timeline__component timeline__component--bg">
+      <h2 class="timeline__title">3rd Year-begins🥶</h2>
+      <p class="timeline__paragraph">
+        life is becoming more serious
+      </p>
+    </div>
+    <div class="timeline__component timeline__component--bottom timeline__component--bg">
+      <h2 class="timeline__title">4 years of dedication</h2>
+      <p class="timeline__paragraph">
+        Time to face life alone
+      </p>
+  
+    </div>
+    <div class="timeline__middle">
+      <div class="timeline__point"></div>
+      <div class="timeline__point timeline__point--bottom"></div>
+    </div>
+    <div class="timeline__component timeline__component--bottom">
+      <div class="timeline__date">Senior Year</div>
+    </div>
+  </div>
+</div>
+
+        </main>
+    </div>
+
+    <script>
+        // Add this JavaScript to handle active state changes
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // Remove active class from all links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Special case for Dashboard link
+                    if(this.getAttribute('href') === '#') {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Update active link based on scroll position
+            window.addEventListener('scroll', function() {
+                const sections = {
+                    'profile-section': document.querySelector('a[href="#profile-section"]'),
+                    'grades-section': document.querySelector('a[href="#grades-section"]'),
+                    'announcements-section': document.querySelector('a[href="#announcements-section"]')
+                };
+                
+                const scrollPosition = window.scrollY + 100;
+                
+                for (const [sectionId, link] of Object.entries(sections)) {
+                    const section = document.getElementById(sectionId);
+                    if (section.offsetTop <= scrollPosition && 
+                        section.offsetTop + section.offsetHeight > scrollPosition) {
+                        navLinks.forEach(l => l.classList.remove('active'));
+                        link.classList.add('active');
+                    }
+                }
+                
+                // Handle top of page case
+                if (window.scrollY < 100) {
+                    document.querySelector('a[href="#"]').classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script>
+      async function fetchStudentData() {
+  try {
+    // 1. First fetch the last student activity to get the username
+    const activityResponse = await fetch('http://localhost:3000/api/last-student-activity');
+    
+    if (!activityResponse.ok) {
+      throw new Error(`HTTP error! status: ${activityResponse.status}`);
+    }
+    
+    const activityData = await activityResponse.json();
+    
+    if (!activityData.success) {
+      throw new Error(activityData.message);
+    }
+    
+    const username = activityData.data.username;
+    const profileName = document.getElementById('profileName');
+    profileName.textContent = username;
+    console.log('Last student username:', username);
+    
+    // 2. Fetch both profile and stats data in parallel
+    const [profile, stats] = await Promise.all([
+      fetchUserProfile(username),
+      fetchUserStats(username)
+    ]);
+    
+    // 3. Return as array of two objects
+    return [profile, stats];
+    
+  } catch (error) {
+    console.error('Error in fetchStudentData:', error);
+    throw error; // Re-throw to allow calling code to handle
+  }
+}
+
+async function fetchUserProfile(username) {
+  try {
+    const response = await fetch(`http://localhost:3000/api/profile/${username}`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+    
+    return data.data; // Return just the profile data
+    
+  } catch (error) {
+    console.error('Error fetching profile:', error);
+    throw error;
+  }
+}
+
+async function fetchUserStats(username) {
+  try {
+    const response = await fetch(`http://localhost:3000/api/stats/${username}`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+    
+    return data.data; // Return just the stats data
+    
+  } catch (error) {
+    console.error('Error fetching stats:', error);
+    throw error;
+  }
+}
+
+// Usage example:
+fetchStudentData()
+  .then(([profileData, statsData]) => {
+    
+    console.log('Profile data:', profileData);
+    console.log('Stats data:', statsData);
+   
+    const profileRole = document.getElementById('profileRole');
+    profileRole.textContent = profileData.department;
+    const regNo = document.getElementById('regNo');
+    regNo.innerHTML = profileData.studentId;
+    const studentEmail = document.getElementById('studentEmail');
+    studentEmail.innerHTML = profileData.emailAddress;
+    const department = document.getElementById('department');
+    department.innerHTML = profileData.department;
+    const studentSemester = document.getElementById('studentSemester');
+    studentSemester.innerHTML = profileData.semester;
+    const cgpa = document.getElementById('cgpa');
+    cgpa.innerHTML = statsData.CGPA;
+    const attendance = document.getElementById('attendance');
+    attendance.innerHTML = statsData.Attendance;
+    const totalCredits = document.getElementById('totalCredits');
+    totalCredits.innerHTML = statsData.totalcredits;
+    const universityRank = document.getElementById('universityRank');
+    universityRank.innerHTML = statsData.universityrank;
+    
+   
+   
+  })
+  .catch(error => {
+    console.error('Failed to fetch student data:', error);
+    // Handle error (show message to user, etc.)
+  });
+ 
+  
+  
+
+    </script>
+     <script>
+        // Add this script to handle courses functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Default courses data
+            const defaultCourses = [
+                {
+                    code: "CS101",
+                    name: "Introduction to Computer Science",
+                    credits: 4,
+                    instructor: "Dr. Smith",
+                    schedule: "Mon/Wed 9:00-10:30"
+                },
+                {
+                    code: "MATH201",
+                    name: "Discrete Mathematics",
+                    credits: 3,
+                    instructor: "Prof. Johnson",
+                    schedule: "Tue/Thu 11:00-12:30"
+                },
+                {
+                    code: "CS202",
+                    name: "Data Structures and Algorithms",
+                    credits: 4,
+                    instructor: "Dr. Williams",
+                    schedule: "Mon/Wed/Fri 1:30-3:00"
+                },
+                {
+                    code: "PHYS101",
+                    name: "Physics for Engineers",
+                    credits: 3,
+                    instructor: "Prof. Brown",
+                    schedule: "Tue/Thu 9:00-10:30"
+                }
+            ];
+            
+            // Initialize courses
+            let courses = [...defaultCourses];
+            const coursesGrid = document.getElementById('coursesGrid');
+            
+            // Render courses
+            function renderCourses() {
+                coursesGrid.innerHTML = '';
+                courses.forEach(course => {
+                    const courseCard = document.createElement('div');
+                    courseCard.className = 'course-card';
+                    courseCard.innerHTML = `
+                        <div class="course-code">${course.code}</div>
+                        <div class="course-name">${course.name}</div>
+                        <div class="course-details">
+                            <span>Credits: ${course.credits}</span>
+                            <span>Instructor: ${course.instructor}</span>
+                        </div>
+                        <div class="course-details">
+                            <span>Schedule: ${course.schedule}</span>
+                        </div>
+                        <div class="course-actions">
+                            <button class="delete-btn" data-code="${course.code}">
+                                <i class="fas fa-trash"></i> Remove
+                            </button>
+                        </div>
+                    `;
+                    coursesGrid.appendChild(courseCard);
+                });
+                
+                // Add event listeners to delete buttons
+                document.querySelectorAll('.delete-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const courseCode = this.getAttribute('data-code');
+                        courses = courses.filter(course => course.code !== courseCode);
+                        renderCourses();
+                    });
+                });
+            }
+            
+            // Initial render
+            renderCourses();
+            
+            // Add course form toggle
+            const addCourseBtn = document.getElementById('addCourseBtn');
+            const addCourseForm = document.getElementById('addCourseForm');
+            const cancelAddCourse = document.getElementById('cancelAddCourse');
+            
+            addCourseBtn.addEventListener('click', function() {
+                addCourseForm.style.display = 'block';
+            });
+            
+            cancelAddCourse.addEventListener('click', function() {
+                addCourseForm.style.display = 'none';
+                // Clear form
+                document.getElementById('courseCode').value = '';
+                document.getElementById('courseName').value = '';
+                document.getElementById('courseCredits').value = '';
+                document.getElementById('courseInstructor').value = '';
+            });
+            
+            // Submit new course
+            const submitCourse = document.getElementById('submitCourse');
+            submitCourse.addEventListener('click', function() {
+                const code = document.getElementById('courseCode').value.trim();
+                const name = document.getElementById('courseName').value.trim();
+                const credits = parseInt(document.getElementById('courseCredits').value);
+                const instructor = document.getElementById('courseInstructor').value.trim();
+                
+                if (!code || !name || isNaN(credits) || !instructor) {
+                    alert('Please fill in all fields with valid data');
+                    return;
+                }
+                
+                // Add new course
+                courses.push({
+                    code,
+                    name,
+                    credits,
+                    instructor,
+                    schedule: "Schedule to be announced"
+                });
+                
+                // Re-render courses
+                renderCourses();
+                
+                // Hide and clear form
+                addCourseForm.style.display = 'none';
+                document.getElementById('courseCode').value = '';
+                document.getElementById('courseName').value = '';
+                document.getElementById('courseCredits').value = '';
+                document.getElementById('courseInstructor').value = '';
+            });
+        });
+    </script>
+    <button class="sidebar-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+    <script>
+        document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+    document.querySelector('.sidebar').classList.toggle('active');
+});
+// Add this script at the end of your body
+document.addEventListener('DOMContentLoaded', function() {
+    // Toggle chatbot minimize
+    const minimizeBtn = document.querySelector('.minimize-btn');
+    const chatbotSection = document.querySelector('.ai-chatbot-section');
+    
+    minimizeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        chatbotSection.classList.toggle('collapsed');
+        this.innerHTML = chatbotSection.classList.contains('collapsed') ? 
+            '<i class="fas fa-plus"></i>' : '<i class="fas fa-minus"></i>';
+    });
+    
+    // Feature explanation buttons
+    const featureBtns = document.querySelectorAll('.feature-btn');
+    const chatMessages = document.querySelector('.chatbot-messages');
+    
+    featureBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const feature = this.getAttribute('data-feature');
+            let explanation = '';
+            
+            switch(feature) {
+                case 'finance':
+                    explanation = 'The Finance section shows your fee payments, due amounts, and payment history. You can view pending payments and download receipts.';
+                    break;
+                case 'courses':
+                    explanation = 'Courses section displays your current enrolled courses with materials, assignments, and faculty details. You can access study resources here.';
+                    break;
+                case 'grades':
+                    explanation = 'Grades section provides your academic performance including CGPA, subject-wise marks, and attendance percentage.';
+                    break;
+                case 'timetable':
+                    explanation = 'Timetable shows your weekly class schedule with timings, rooms, and faculty information. Any changes will be reflected here.';
+                    break;
+            }
+            
+            // Add user question
+            addMessage(this.textContent.replace(/^[^\s]+\s/, ''), 'user');
+            // Add bot response
+            setTimeout(() => addMessage(explanation, 'bot'), 500);
+        });
+    });
+    
+    function addMessage(text, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${sender}-message`;
+        
+        messageDiv.innerHTML = `
+            <div class="message-content">
+                <p>${text}</p>
+            </div>
+            <div class="message-time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+        `;
+        
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    // Send button functionality
+    document.querySelector('.send-btn').addEventListener('click', sendMessage);
+    document.querySelector('.chat-input').addEventListener('keypress', function(e) {
+        if(e.key === 'Enter') sendMessage();
+    });
+    
+    function sendMessage() {
+        const input = document.querySelector('.chat-input');
+        if(input.value.trim()) {
+            addMessage(input.value, 'user');
+            setTimeout(() => {
+                addMessage("I'm still learning! For now, please use the quick buttons above for dashboard explanations.", 'bot');
+            }, 800);
+            input.value = '';
+        }
+    }
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "RaviKumar": {
+    "studentId": "22BCE4821",
+    "emailAddress": "Ravi@vitstudent.ac.in",
+    "department": "Computer Science",
+    "semester": "Fall 2023"
+  },
+  "Frank_077": {
+    "studentId": "22BCE4822",
+    "emailAddress": "Frank@vitstudent.ac.in",
+    "department": "Computer Science",
+    "semester": "Fall 2023"
+  },
+  "SureshRaj": {
+    "studentId": "22BME1231",
+    "emailAddress": "Suresh@vitstudent.ac.in",
+    "department": "Mechancial Engineering",
+    "semester": "Fall 2023"
+  }
+  
+}
