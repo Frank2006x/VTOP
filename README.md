@@ -45,9 +45,9 @@ The VTOP Portal is a comprehensive web application designed for VIT Chennai stud
    cd VTOP
 2.Install dependencies:
 `cd backend`
-`npm install`
+`npm install`.
 3.Start the backend server:
-node server.js
+node server.js.
 4.Open the frontend:
 
 Use a live server extension in your IDE or open the landing.html file in your browser.
