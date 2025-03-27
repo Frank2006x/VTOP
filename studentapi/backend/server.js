@@ -430,6 +430,8 @@ app.get("/api/stats/:username", (req, res) => {
   }
 });
 
+
+
 // Serve frontend files
 app.use(express.static(path.join(__dirname, "../landing_page")));
 

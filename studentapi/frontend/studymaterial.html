@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Materials | VIT Chennai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --dark-color: #5a5c69;
+            --light-color: #f8f9fc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f8f9fc;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            background-color: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem 1rem;
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            animation: fadeIn 0.8s ease;
+        }
+        
+        .nav-menu {
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-bottom: 0.5rem;
+            animation: slideInLeft 0.5s ease forwards;
+            opacity: 0;
+        }
+        
+        .nav-item:nth-child(1) { animation-delay: 0.1s; }
+        .nav-item:nth-child(2) { animation-delay: 0.2s; }
+        .nav-item:nth-child(3) { animation-delay: 0.3s; }
+        .nav-item:nth-child(4) { animation-delay: 0.4s; }
+        .nav-item:nth-child(5) { animation-delay: 0.5s; }
+        .nav-item:nth-child(6) { animation-delay: 0.6s; }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+        
+        .nav-link.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .nav-link i {
+            margin-right: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #e9ecef;
+            margin: 1.5rem 0;
+            animation: fadeIn 0.8s ease;
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 2rem;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .page-title {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+        }
+        
+        .notification-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--dark-color);
+        }
+        
+        .notification-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #e74a3b;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+        
+        /* Library Section Styles */
+        .library-section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+        }
+        
+        .library-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .search-bar {
+            display: flex;
+            width: 60%;
+        }
+        
+        .search-bar input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #d1d3e2;
+            border-radius: 0.35rem 0 0 0.35rem;
+            font-size: 1rem;
+        }
+        
+        .search-bar button {
+            padding: 0 1.25rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 0.35rem 0.35rem 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .search-bar button:hover {
+            background-color: #2e59d9;
+        }
+        
+        .filter-options {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background-color: #f8f9fc;
+            border: 1px solid #d1d3e2;
+            border-radius: 0.35rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.85rem;
+        }
+        
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .filter-btn:hover {
+            background-color: #e2e6ea;
+        }
+        
+        /* Resources Grid */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .resource-card {
+            background-color: #fff;
+            border-radius: 0.35rem;
+            padding: 1.25rem;
+            border: 1px solid #e3e6f0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1.5rem 0 rgba(58, 59, 69, 0.2);
+        }
+        
+        .resource-type {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .book { background-color: #f6c23e; color: #fff; }
+        .paper { background-color: #1cc88a; color: #fff; }
+        .ebook { background-color: #36b9cc; color: #fff; }
+        .video { background-color: #e74a3b; color: #fff; }
+        
+        .resource-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: #5a5c69;
+        }
+        
+        .resource-author {
+            color: #858796;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+        
+        .resource-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #858796;
+            margin-bottom: 1rem;
+        }
+        
+        .resource-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .view-btn, .download-btn {
+            padding: 0.375rem 0.75rem;
+            border: none;
+            border-radius: 0.35rem;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .view-btn {
+            background-color: #36b9cc;
+            color: white;
+        }
+        
+        .download-btn {
+            background-color: #1cc88a;
+            color: white;
+        }
+        
+        .view-btn:hover, .download-btn:hover {
+            opacity: 0.9;
+        }
+        
+        /* Checked Out Items Section */
+        .checked-out-section {
+            background-color: #fff;
+            border-radius: 0.35rem;
+            padding: 2rem;
+            border: 1px solid #e3e6f0;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+        }
+        
+        .checked-out-list {
+            margin-top: 1rem;
+        }
+        
+        .checked-out-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e3e6f0;
+        }
+        
+        .checked-out-info {
+            flex: 1;
+        }
+        
+        .checked-out-info strong {
+            color: #5a5c69;
+        }
+        
+        .due-date {
+            color: #e74a3b;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+        
+        .return-btn {
+            padding: 0.375rem 0.75rem;
+            background-color: #e74a3b;
+            color: white;
+            border: none;
+            border-radius: 0.35rem;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .return-btn:hover {
+            background-color: #d52a1a;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1050;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 1.5rem;
+            border-radius: 0.35rem;
+            width: 60%;
+            max-width: 700px;
+            box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.3);
+            border: 1px solid rgba(0,0,0,0.2);
+        }
+        
+        .close-btn {
+            float: right;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #5a5c69;
+        }
+        
+        .modal-header {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e3e6f0;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .modal-header h3 {
+            margin: 0;
+            color: #5a5c69;
+        }
+        
+        .modal-body {
+            padding: 1rem 0;
+        }
+        
+        .modal-body p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .modal-body strong {
+            color: #5a5c69;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from { 
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        /* Mobile First Approach - Default styles are for mobile */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  /* Adjustments for slightly larger mobile screens */
+  .search-bar {
+    width: 70% !important;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  /* Tablet-specific styles */
+  .resources-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .library-header {
+    flex-direction: row !important;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* Desktop styles - most of your existing CSS works here */
+  .sidebar {
+    transform: translateX(0) !important;
+    width: 250px !important;
+  }
+  
+  .main-content {
+    margin-left: 250px !important;
+  }
+  
+  .sidebar-toggle {
+    display: none !important;
+  }
+  
+  .resources-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /* Optional adjustments for very large screens */
+  .resources-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* Mobile-specific styles (applies to screens smaller than 768px) */
+@media (max-width: 767.98px) {
+  /* Sidebar becomes off-canvas */
+  .sidebar {
+    transform: translateX(-100%);
+    width: 280px;
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 1rem !important;
+  }
+  
+  /* Header adjustments */
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .page-title {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Search and filter adjustments */
+  .library-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .search-bar {
+    width: 100% !important;
+  }
+  
+  .filter-options {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  /* Resource grid becomes single column */
+  .resources-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Modal adjustments */
+  .modal-content {
+    width: 90% !important;
+    margin: 20% auto !important;
+  }
+  
+  /* Show sidebar toggle button */
+  .sidebar-toggle {
+    display: block !important;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+}
+aside {
+  overflow: auto;               /* Enables scrolling */
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE 10+ */
+}
+
+/* For WebKit-based browsers (Chrome, Safari) */
+aside::-webkit-scrollbar {
+  display: none;
+}
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">Vit Chennai</div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="studentdashboard.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="studentdashboard.html#profile-section" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    Profile
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="studentdashboard.html#grades-section" class="nav-link">
+                    <i class="fas fa-graduation-cap"></i>
+                    Grades
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="studentdashboard.html#announcements-section" class="nav-link">
+                    <i class="fas fa-bell"></i>
+                    Notification
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="studentdashboard.html#timetable-section" class="nav-link">
+                    <i class="fas fa-calendar-alt"></i>
+                    Timetable
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="studentdashboard.html#courses-section" class="nav-link">
+                    <i class="fas fa-book-open"></i>
+                    Courses
+                </a>
+            </li>
+            <li class="nav-item">
+              <a href="studentdashboard.html#finance-section" class="nav-link">
+                  <i class="fas fa-money-bill-wave"></i>
+                  Finance & Fees
+              </a>
+          </li>
+          <li class="nav-item">
+            <a href="studentdashboard.html#ai-chatbot-section" class="nav-link">
+                <i class="fas fa-robot"></i>
+                Dashboard Assistant
+            </a>
+        </li>
+        </ul>
+        
+        <div class="divider"></div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="studymaterial.html" class="nav-link active">
+                    <i class="fas fa-book"></i>
+                    Study Material
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="feedback.html" class="nav-link">
+                    <i class="fas fa-comment-alt"></i>
+                    Feedback
+                </a>
+            </li>
+        </ul>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="header">
+            <h1 class="page-title">Library & Study Materials</h1>
+            <div class="notification-icon">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">2</span>
+            </div>
+        </div>
+        
+        <!-- Library Resources Section -->
+        <div class="library-section">
+            <div class="library-header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search books, papers, or resources...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-options">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Books</button>
+                    <button class="filter-btn">Papers</button>
+                    <button class="filter-btn">E-books</button>
+                    <button class="filter-btn">Videos</button>
+                </div>
+            </div>
+            
+            <div class="resources-grid" id="resourcesGrid">
+                <!-- Resources will be loaded here by JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Checked Out Items Section -->
+        <div class="checked-out-section">
+            <h3 class="section-title">Your Checked Out Items</h3>
+            <div class="checked-out-list" id="checkedOutList">
+                <!-- Checked out items will be loaded here by JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Resource Modal -->
+        <div id="resourceModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="modal-header">
+                    <h3 id="modalResourceTitle">Resource Title</h3>
+                    <span id="modalResourceType" class="resource-type book">Book</span>
+                </div>
+                <div class="modal-body">
+                    <div style="display: flex; gap: 2rem; margin-bottom: 1.5rem;">
+                        <div style="flex: 1;">
+                            <p><strong>Author:</strong> <span id="modalResourceAuthor">Author Name</span></p>
+                            <p><strong>Published:</strong> <span id="modalResourceYear">2023</span></p>
+                            <p><strong>ISBN/DOI:</strong> <span id="modalResourceId">ISBN-123456789</span></p>
+                        </div>
+                        <div style="flex: 1;">
+                            <p><strong>Available Copies:</strong> <span id="modalResourceCopies">5</span></p>
+                            <p><strong>Pages/Duration:</strong> <span id="modalResourceLength">300 pages</span></p>
+                        </div>
+                    </div>
+                    <p><strong>Description:</strong></p>
+                    <p id="modalResourceDescription" style="margin-top: 0.5rem; line-height: 1.6;">Detailed description of the resource will appear here. This could be the abstract for a paper, the summary for a book, or details about the video content.</p>
+                    <div class="resource-actions" style="margin-top: 1.5rem; display: flex; gap: 0.75rem; justify-content: flex-end;">
+                        <button class="view-btn"><i class="fas fa-eye"></i> Preview</button>
+                        <button class="download-btn"><i class="fas fa-download"></i> Download</button>
+                        <button class="download-btn" id="checkoutBtn"><i class="fas fa-bookmark"></i> Check Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Sample library data
+        const libraryResources = [
+            {
+                id: "bk001",
+                type: "book",
+                title: "Introduction to Algorithms",
+                author: "Thomas H. Cormen",
+                year: "2009",
+                details: "3rd Edition, 1312 pages",
+                copies: 8,
+                description: "A comprehensive introduction to modern algorithms, covering a broad range of algorithms in depth while making their design and analysis accessible to all levels of readers."
+            },
+            {
+                id: "bk002",
+                type: "ebook",
+                title: "Clean Code: A Handbook of Agile Software Craftsmanship",
+                author: "Robert C. Martin",
+                year: "2008",
+                details: "464 pages",
+                copies: "Unlimited",
+                description: "Even bad code can function. But if code isn't clean, it can bring a development organization to its knees. This book teaches you how to write clean code."
+            },
+            {
+                id: "bk003",
+                type: "paper",
+                title: "The Anatomy of a Large-Scale Hypertextual Web Search Engine",
+                author: "Sergey Brin, Lawrence Page",
+                year: "1998",
+                details: "18 pages",
+                copies: "Digital",
+                description: "This paper describes Google, a prototype of a large-scale search engine which makes heavy use of the structure present in hypertext."
+            },
+            {
+                id: "bk004",
+                type: "video",
+                title: "Machine Learning Foundations",
+                author: "Andrew Ng",
+                year: "2020",
+                details: "12 hours",
+                copies: "Unlimited",
+                description: "This course provides a broad introduction to machine learning, data mining, and statistical pattern recognition."
+            },
+            {
+                id: "bk005",
+                type: "book",
+                title: "Design Patterns: Elements of Reusable Object-Oriented Software",
+                author: "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
+                year: "1994",
+                details: "395 pages",
+                copies: 5,
+                description: "This book captures design experience in object-oriented design patterns that can be reused in many different designs."
+            },
+            {
+                id: "bk006",
+                type: "paper",
+                title: "MapReduce: Simplified Data Processing on Large Clusters",
+                author: "Jeffrey Dean, Sanjay Ghemawat",
+                year: "2004",
+                details: "13 pages",
+                copies: "Digital",
+                description: "MapReduce is a programming model and an associated implementation for processing and generating large data sets."
+            }
+        ];
+
+        // Sample checked out items
+        const checkedOutItems = [
+            {
+                id: "bk007",
+                type: "book",
+                title: "Computer Networks",
+                author: "Andrew S. Tanenbaum",
+                dueDate: "2023-12-15"
+            },
+            {
+                id: "bk008",
+                type: "ebook",
+                title: "The Pragmatic Programmer",
+                author: "Andrew Hunt, David Thomas",
+                dueDate: "2023-12-20"
+            }
+        ];
+
+        // DOM elements
+        const resourcesGrid = document.getElementById('resourcesGrid');
+        const checkedOutList = document.getElementById('checkedOutList');
+        const modal = document.getElementById('resourceModal');
+        const closeBtn = document.querySelector('.close-btn');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        // Render library resources
+        function renderResources(filter = 'all') {
+            resourcesGrid.innerHTML = '';
+            
+            const filteredResources = filter === 'all' 
+                ? libraryResources 
+                : libraryResources.filter(res => {
+                    if (filter === 'books') return res.type === 'book';
+                    if (filter === 'papers') return res.type === 'paper';
+                    if (filter === 'e-books') return res.type === 'ebook';
+                    if (filter === 'videos') return res.type === 'video';
+                    return true;
+                });
+            
+            filteredResources.forEach(resource => {
+                const resourceCard = document.createElement('div');
+                resourceCard.className = 'resource-card';
+                
+                let typeClass = '';
+                let typeText = '';
+                switch(resource.type) {
+                    case 'book': 
+                        typeClass = 'book';
+                        typeText = 'Book';
+                        break;
+                    case 'ebook': 
+                        typeClass = 'ebook';
+                        typeText = 'E-book';
+                        break;
+                    case 'paper': 
+                        typeClass = 'paper';
+                        typeText = 'Research Paper';
+                        break;
+                    case 'video': 
+                        typeClass = 'video';
+                        typeText = 'Video';
+                        break;
+                }
+                
+                resourceCard.innerHTML = `
+                    <span class="resource-type ${typeClass}">${typeText}</span>
+                    <div class="resource-title">${resource.title}</div>
+                    <div class="resource-author">${resource.author} (${resource.year})</div>
+                    <div class="resource-details">
+                        <span>${resource.details}</span>
+                        <span>${resource.copies} available</span>
+                    </div>
+                    <div class="resource-actions">
+                        <button class="view-btn" data-id="${resource.id}">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                        <button class="download-btn" data-id="${resource.id}">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                `;
+                
+                resourcesGrid.appendChild(resourceCard);
+            });
+            
+            // Add event listeners to view buttons
+            document.querySelectorAll('.view-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const resourceId = this.getAttribute('data-id');
+                    openResourceModal(resourceId);
+                });
+            });
+        }
+
+        // Render checked out items
+        function renderCheckedOutItems() {
+            checkedOutList.innerHTML = '';
+            
+            if (checkedOutItems.length === 0) {
+                checkedOutList.innerHTML = '<p style="color: #858796;">You have no items checked out currently.</p>';
+                return;
+            }
+            
+            checkedOutItems.forEach(item => {
+                const checkedOutItem = document.createElement('div');
+                checkedOutItem.className = 'checked-out-item';
+                
+                checkedOutItem.innerHTML = `
+                    <div class="checked-out-info">
+                        <div><strong>${item.title}</strong> by ${item.author}</div>
+                        <div class="due-date">Due: ${item.dueDate}</div>
+                    </div>
+                    <button class="return-btn" data-id="${item.id}">
+                        <i class="fas fa-undo"></i> Return
+                    </button>
+                `;
+                
+                checkedOutList.appendChild(checkedOutItem);
+            });
+            
+            // Add event listeners to return buttons
+            document.querySelectorAll('.return-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const itemId = this.getAttribute('data-id');
+                    returnItem(itemId);
+                });
+            });
+        }
+
+        // Open resource modal
+        function openResourceModal(resourceId) {
+            const resource = libraryResources.find(res => res.id === resourceId);
+            if (!resource) return;
+            
+            // Set modal content
+            document.getElementById('modalResourceTitle').textContent = resource.title;
+            
+            let typeClass = '';
+            let typeText = '';
+            switch(resource.type) {
+                case 'book': 
+                    typeClass = 'book';
+                    typeText = 'Book';
+                    break;
+                case 'ebook': 
+                    typeClass = 'ebook';
+                    typeText = 'E-book';
+                    break;
+                case 'paper': 
+                    typeClass = 'paper';
+                    typeText = 'Research Paper';
+                    break;
+                case 'video': 
+                    typeClass = 'video';
+                    typeText = 'Video';
+                    break;
+            }
+            
+            const typeElement = document.getElementById('modalResourceType');
+            typeElement.textContent = typeText;
+            typeElement.className = `resource-type ${typeClass}`;
+            
+            document.getElementById('modalResourceAuthor').textContent = resource.author;
+            document.getElementById('modalResourceYear').textContent = resource.year;
+            document.getElementById('modalResourceId').textContent = resource.id.startsWith('bk') ? `ISBN-${resource.id.substring(2)}` : `DOI-${resource.id.substring(2)}`;
+            document.getElementById('modalResourceCopies').textContent = resource.copies;
+            document.getElementById('modalResourceLength').textContent = resource.details;
+            document.getElementById('modalResourceDescription').textContent = resource.description;
+            
+            // Show modal
+            modal.style.display = 'block';
+        }
+
+        // Return item function
+        function returnItem(itemId) {
+            // In a real app, this would make an API call
+            const item = checkedOutItems.find(item => item.id === itemId);
+            if (item) {
+                alert(`"${item.title}" has been returned successfully.`);
+                // Remove from checked out items (in a real app, this would happen after API success)
+                const index = checkedOutItems.findIndex(item => item.id === itemId);
+                if (index !== -1) {
+                    checkedOutItems.splice(index, 1);
+                    renderCheckedOutItems();
+                }
+            }
+        }
+
+        // Close modal
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Filter buttons
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.textContent.toLowerCase();
+                renderResources(filter);
+            });
+        });
+
+        // Checkout button in modal
+        document.getElementById('checkoutBtn').addEventListener('click', function() {
+            const resourceTitle = document.getElementById('modalResourceTitle').textContent;
+            const resourceId = document.getElementById('modalResourceId').textContent.replace('ISBN-', 'bk').replace('DOI-', 'pp');
+            
+            // Calculate due date (14 days from now)
+            const today = new Date();
+            const dueDate = new Date(today);
+            dueDate.setDate(today.getDate() + 14);
+            const formattedDueDate = dueDate.toISOString().split('T')[0];
+            
+            // Add to checked out items
+            const resource = libraryResources.find(res => res.id === resourceId);
+            if (resource) {
+                checkedOutItems.push({
+                    id: resourceId,
+                    type: resource.type,
+                    title: resource.title,
+                    author: resource.author,
+                    dueDate: formattedDueDate
+                });
+                renderCheckedOutItems();
+            }
+            
+            alert(`"${resourceTitle}" has been checked out successfully. Due date: ${formattedDueDate}`);
+            modal.style.display = 'none';
+        });
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderResources();
+            renderCheckedOutItems();
+        });
+    </script>
+    <button class="sidebar-toggle">
+      <i class="fas fa-bars"></i>
+  </button>
+  <script>
+    document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+    document.querySelector('.sidebar').classList.toggle('active');
+});
+  </script>
+</body>
+</html>
